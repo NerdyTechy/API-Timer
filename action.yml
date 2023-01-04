@@ -12,9 +12,7 @@ inputs:
   endpoints:
     description: "The endpoints to test the response time of."
     required: true
-    default: [
-      "/test"
-    ]
+    default: "/test1 /test2"
 runs:
   using: 'node18'
   main: 'index.js'
