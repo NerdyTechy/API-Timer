@@ -15,4 +15,4 @@ inputs:
     default: "/test1 /test2"
 runs:
   using: 'node18'
-  main: 'index.js'
+  main: 'dist/index.js'
