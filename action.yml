@@ -15,4 +15,6 @@ inputs:
     default: [
       "/test"
     ]
-  
+runs:
+  using: 'node18'
+  main: 'index.js'
