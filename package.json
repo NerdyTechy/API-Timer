@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "build": "ncc build index.js --license licenses.txt",
-        "format": "npx prettier --write ."
+        "format": "npx prettier --write .",
+        "lint": "eslint . --ext .js",
+        "lint:fix": "eslint . --ext .js --fix"
     },
     "repository": {
         "type": "git",
@@ -24,6 +26,7 @@
         "node-fetch": "^3.3.0"
     },
     "devDependencies": {
+        "eslint": "^8.34.0",
         "prettier": "^2.8.4"
     }
 }

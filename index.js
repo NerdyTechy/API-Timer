@@ -8,7 +8,7 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
         const base = core.getInput("base");
         const endpoints = core.getInput("endpoints").split(" ");
 
-        for (endpoint of endpoints) {
+        for (var endpoint of endpoints) {
             const time = Date.now();
             await fetch(`${base}${endpoint}`).then((data) => data.text());
             const timeTaken = Date.now() - time;
