@@ -1,18 +1,18 @@
 name: "API Timer"
 description: "Ensure your API endpoints respond within a certain timeframe."
 inputs:
-  time-limit:
-    description: "The amount of ms before the workflow fails."
-    required: true;
-    default: 750
-  base:
-    description: "The base URL of your requests."
-    required: true
-    default: "https://example.com"
-  endpoints:
-    description: "The endpoints to test the response time of."
-    required: true
-    default: "/test1 /test2"
+    time-limit:
+        description: "The amount of ms before the workflow fails."
+        required: true;
+        default: 750
+    base:
+        description: "The base URL of your requests."
+        required: true
+        default: "https://example.com"
+    endpoints:
+        description: "The endpoints to test the response time of."
+        required: true
+        default: "/test1 /test2"
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+    using: "node16"
+    main: "dist/index.js"

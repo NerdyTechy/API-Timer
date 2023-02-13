@@ -1,6 +1,6 @@
-const core = require('@actions/core');
+const core = require("@actions/core");
 
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 (async () => {
     try {
@@ -8,17 +8,17 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
         const base = core.getInput("base");
         const endpoints = core.getInput("endpoints").split(" ");
 
-        for (endpoint of endpoints){
+        for (endpoint of endpoints) {
             const time = Date.now();
-            await fetch(`${base}${endpoint}`).then(data => data.text());
+            await fetch(`${base}${endpoint}`).then((data) => data.text());
             const timeTaken = Date.now() - time;
-            if (timeTaken >= timeLimit){
+            if (timeTaken >= timeLimit) {
                 core.setFailed(`The endpoint ${endpoint} took ${timeTaken}ms to respond when limit was set to ${timeLimit}ms.`);
             } else {
                 core.info(`The endpoint ${endpoint} took ${timeTaken}ms to respond which is within the ${timeLimit}ms limit.`);
             }
         }
-    } catch(err){
+    } catch (err) {
         core.setFailed(err.message);
     }
 })();
